@@ -113,9 +113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bola: {fileID: 0}
-  multiplier: 3
-  color: {r: 0.9150943, g: 0.13294764, b: 0.13294764, a: 0}
-  bumperAnimator: {fileID: 0}
+  multiplier: 2
+  bumperAnimator: {fileID: 6730109888467831661}
+  bumperColors:
+  - {fileID: 2100000, guid: 1260934236df53b45b4bba084284dea5, type: 2}
+  - {fileID: 2100000, guid: 900ea9440efa5ff4196a95873542ef83, type: 2}
+  - {fileID: 2100000, guid: bf0f5495489d0c34fbfb7b81359234ce, type: 2}
 --- !u!95 &6730109888467831661
 Animator:
   serializedVersion: 5
