@@ -8,10 +8,12 @@ public class BallController : MonoBehaviour
     public float maxSpeed;
 
     private Rigidbody rig;
+    private Vector3 resetPosition;
 
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
+        resetPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
 
     private void Update()
@@ -22,5 +24,11 @@ public class BallController : MonoBehaviour
             // kalau melebihi buat vector velocity baru dengan besaran max speed
             rig.velocity = rig.velocity.normalized * maxSpeed;
         }
+    }
+
+    public void ResetPosition()
+    {
+        this.transform.position = new Vector3(resetPosition.x,resetPosition.y,resetPosition.z);
+        rig.velocity = new Vector3(0, 0, 0);
     }
 }

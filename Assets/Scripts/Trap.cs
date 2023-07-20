@@ -2,31 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Trap : MonoBehaviour
 {
-    public Collider bola;
-    public CoinSpawner coinSpawner;
+    public BallController ballController;
+    public Collider ballCollider;
+
+    public TrapSpawner trapSpawner;
     public float existTime;
 
     private float timer = 0;
-    
 
     private void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= existTime)
+        if (timer >= existTime)
         {
             Destroy(gameObject);
-            coinSpawner.coinSpawned--;
+            trapSpawner.trapSpawned--;
         }
     }
-    // Start is called before the first frame update
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other == bola)
+        if(other == ballCollider)
         {
+            ballController.ResetPosition();
             Destroy(gameObject);
-            coinSpawner.coinSpawned--;
+            trapSpawner.trapSpawned--;
         }
     }
 }
